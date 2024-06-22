@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+
+  backend:
+    build: 
+      context: ./back-end/
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      URL_DATABASE: ${URL_DATABASE}
+    depends_on:
+      - db
+
+  frontend:
+    build: 
+      context: ./front-end/
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
