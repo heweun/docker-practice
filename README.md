@@ -9,7 +9,7 @@ docker compose up -d --build
 
 ## 특이사항
 - .env 파일 업로드 안함
-- 백엔드 컨테이너가 안될때 Doker Desktop에서 Run누르면 실행됨..
+- 혹시 백엔드 컨테이너가 안될때 Doker Desktop에서 Run누르면 실행됨
 
 ## .env 작성 예시
 ```
